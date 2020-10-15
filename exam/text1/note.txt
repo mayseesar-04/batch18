@@ -1,0 +1,16 @@
+SELECT name FROM `staffs`
+SELECT department_id FROM `staffs`
+SELECT staffs.name as staffname, idno, fathername, salary,joindate, departments.name as depname FROM staffs INNER JOIN departments ON staffs.department_id = departments.id ORDER BY staffname
+SELECT staffs.name as staffname, departments.name as depname FROM staffs INNER JOIN departments ON staffs.department_id = departments.id ORDER BY staffname ASC, depname DESC
+SELECT staffs.name as staffname, fathername, salary, joindate, departments.name as depname FROM staffs INNER JOIN departments ON staffs.department_id = departments.id WHERE staffs.name = "Kay Thwe" OR staffs.name = "Thae Su Wai"
+SELECT * FROM `staffs` INNER JOIN departments ON staffs.department_id = departments.id WHERE departments.name = "Admin"
+SELECT * FROM `staffs` WHERE name LIKE"a%"
+SELECT * FROM `staffs` WHERE name LIKE"%e"
+SELECT * FROM `staffs` WHERE salary BETWEEN '100000' AND '500000'
+SELECT * FROM `staffs` WHERE joindate='2014-02-20'
+SELECT COUNT(*) FROM staffs INNER JOIN departments ON staffs.department_id = departments.id WHERE departments.name = "Admin"
+
+SELECT name FROM staffs LIMIT 5
+SELECT salary FROM staffs WHERE staffs.salary 300000 LIMIT 3
+SELECT SUM(salary) AS salary, departments.name AS depname FROM staffs INNER JOIN departments ON staffs.department_id = departments.id
+
